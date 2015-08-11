@@ -1,0 +1,96 @@
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<title>Medical Website Template | Home :: W3layouts</title>
+  
+		<link  rel="stylesheet" type="text/css"  media="all" href={{asset('web/css/style.css')}} />
+		<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href={{asset('web/css/responsiveslides.css')}}>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script src={{asset('web/js/responsiveslides.min.js')}}></script>
+		  <script>
+		    // You can also use "$(window).load(function() {"
+			    $(function () {
+			
+			      // Slideshow 1
+			      $("#slider1").responsiveSlides({
+			        maxwidth: 1600,
+			        speed: 600
+			      });
+			});
+		  </script>
+	</head>
+	<body>
+		<!---start-wrap--->
+		<div class="wrap">
+			<!---start-header--->
+			<div class="header">
+				<!---start-logo--->
+				<div class="logo">
+					<a href="index.html"><img src={{asset('web/images/logo.png')}} /></a>
+				</div>
+				<!---start-logo--->
+				<!---start-top-nav--->
+				<div class="top-nav">
+					<ul>
+						<li ><a href={{path('homepage')}}>Home</a></li>
+						<li><a href={{path('patient')}}>Patients</a></li>
+						<li ><a href={{path('dossiermedical')}}>Dossier Médicaux</a></li>
+						<li><a href={{path('fichepatient_new')}}>Fiches Médicaux</a></li>
+                                                <li ><a href={{path('rendezvous')}}>Rendez-Vous</a></li>
+                                                <li><a href={{path('rdvdisponible')}}>Votre calendrier</a></li>
+					</ul>
+				</div>
+                                               
+				<div class="clear"> </div>
+				<!---End-top-nav--->
+                                 <br />
+                                <div class="project-top-patination">
+                                
+								<ul>
+                       <li><a href={{path('fichepatient_new')}}>Création d'une fiche médical</a></li>
+		      
+								</ul>
+							</div><br />
+			</div>
+		</div>
+                                                
+			<!---End-header--->
+			<!--start-image-slider---->
+                         {% block contenent %}
+    
+					<div class="image-slider">
+						<!-- Slideshow 1 -->
+					    <ul class="rslides" id="slider1">
+					      <li><img src={{asset('web/images/slider3.jpg')}} alt=""></li>
+					      <li><img src={{asset('web/images/slider2.jpg')}} alt=""></li>
+					      <li><img src={{asset('web/images/slider1.jpg')}} alt=""></li>
+					    </ul>
+						 <!-- Slideshow 2 -->
+					</div>
+                          {% endblock %}
+					<!--End-image-slider---->
+		<!---start-content---->
+		<div class="wrap">
+		<div class="content">
+			
+		
+			<div class="clear"> </div>
+                     
+			<div class="footer">
+				<div class="footer-left">
+					<a href="index.html"><img src={{asset('web/images/logo1.png')}} title="logo" /></a>
+				</div>
+				<div class="footer-right">
+					
+				</div>
+				<div class="clear"> </div>
+			</div>
+		</div>
+		<!---End-content---->
+		</div>
+		<!---start-wrap--->
+	</body>
+</html>
+

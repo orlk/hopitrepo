@@ -1,0 +1,48 @@
+Dossiermedical:
+    type: entity
+    table: dossiermedical
+    indexes:
+        codeMedecin:
+            columns:
+                - codeMedecin
+        codePatient:
+            columns:
+                - codePatient
+    id:
+        codedm:
+            type: string
+            nullable: false
+            length: 20
+            fixed: false
+            comment: ''
+            id: true
+            column: codeDm
+            generator:
+                strategy: IDENTITY
+    fields:
+        datecreation:
+            type: datetime
+            nullable: false
+            comment: ''
+            default: CURRENT_TIMESTAMP
+            column: dateCreation
+    manyToOne:
+        codepatient:
+            targetEntity: Patient
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                codePatient:
+                    referencedColumnName: idPatient
+            orphanRemoval: false
+        codemedecin:
+            targetEntity: Medecin
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                codeMedecin:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

@@ -1,0 +1,51 @@
+{% extends 'MedecinIBundle::RendezVous.html.twig' %}
+
+{% block contenent %}
+    <h1 class="titre_d"> liste des Rendez-vous </h1>
+
+    <table class="records_list">
+        <thead>
+             <tr> <th>
+            <form action="" method="POST">
+                Date :  <input type="text" name="search"/>
+                  </th>
+                  <th  > <input class="bttn" type="submit" value="Recherche" ></th>
+</form>     
+                            
+           </tr>
+            <tr>
+               
+                <th>Cin de patient :</th>
+                <th>Date :</th>
+                
+                <th>Etat :</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+              
+                <td>{{ entity.cinP }}</td>
+                <td>{% if entity.date %}{{ entity.date|date('Y-m-d') }}{% endif %}</td>
+                
+                <td>{{ entity.validation }}</td>
+                <td>
+                <ul>
+                    <li class="bttnL">
+                        <a href="{{ path('rendezvous_show', { 'id': entity.code }) }}">show</a>
+                    </li>
+                    
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        <tr>
+        <td class="bttnL"><a href="{{ path('rendezvous') }}">
+           Liste
+            </a></td></tr>
+        </tbody>
+    </table>
+
+        
+    {% endblock %}

@@ -1,0 +1,30 @@
+rdvdisponible:
+    path:     /
+    defaults: { _controller: "MedecinIBundle:Rdvdisponible:index" }
+
+rdvdisponible_show:
+    path:     /{id}/show
+    defaults: { _controller: "MedecinIBundle:Rdvdisponible:show" }
+
+rdvdisponible_new:
+    path:     /new
+    defaults: { _controller: "MedecinIBundle:Rdvdisponible:add" }
+
+rdvdisponible_create:
+    path:     /create
+    defaults: { _controller: "MedecinIBundle:Rdvdisponible:create" }
+    methods:  POST
+
+rdvdisponible_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MedecinIBundle:Rdvdisponible:update" }
+
+rdvdisponible_update:
+    path:     /{id}/update
+    defaults: { _controller: "MedecinIBundle:Rdvdisponible:update" }
+    methods:  [POST, PUT]
+
+rdvdisponible_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MedecinIBundle:Rdvdisponible:delete" }
+    methods:  [POST, DELETE]

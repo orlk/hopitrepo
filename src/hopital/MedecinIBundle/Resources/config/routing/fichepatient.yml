@@ -1,0 +1,33 @@
+fichepatient:
+    path:     /
+    defaults: { _controller: "MedecinIBundle:Fichepatient:index" }
+
+fichepatient_show:
+    path:     /{id}/show
+    defaults: { _controller: "MedecinIBundle:Fichepatient:show" }
+
+fichepatient_new:
+    path:     /new
+    defaults: { _controller: "MedecinIBundle:Fichepatient:add" }
+
+fichepatient_create:
+    path:     /create
+    defaults: { _controller: "MedecinIBundle:Fichepatient:create" }
+    requirements: { _method: post }
+
+fichepatient_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MedecinIBundle:Fichepatient:update" }
+
+fichepatient_update:
+    path:     /{id}/update
+    defaults: { _controller: "MedecinIBundle:Fichepatient:update" }
+    requirements: { _method: post|put }
+
+fichepatient_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MedecinIBundle:Fichepatient:delete" }
+    requirements: { _method: post|delete }
+fichepatient_recherche:
+    path:     /{codeDm}/recherche
+    defaults: { _controller: "MedecinIBundle:Fichepatient:recherchefiche" }

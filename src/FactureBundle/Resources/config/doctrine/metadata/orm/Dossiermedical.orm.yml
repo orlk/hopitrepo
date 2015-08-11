@@ -1,0 +1,32 @@
+Dossiermedical:
+    type: entity
+    table: dossiermedical
+    id:
+        codedm:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: codeDm
+            generator:
+                strategy: IDENTITY
+    fields:
+        datecreation:
+            type: datetime
+            nullable: false
+            comment: ''
+            column: dateCreation
+        codepatient:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: codePatient
+        codemedecin:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: codeMedecin
+    lifecycleCallbacks: {  }

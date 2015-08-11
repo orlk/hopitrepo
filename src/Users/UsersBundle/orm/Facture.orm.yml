@@ -1,0 +1,70 @@
+Facture:
+    type: entity
+    table: facture
+    indexes:
+        idPatient:
+            columns:
+                - idPatient
+    id:
+        idfacture:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        prixConsultation:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+            comment: ''
+            column: prix_consultation
+        prixChambre:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+            comment: ''
+            column: prix_chambre
+        prixTrait:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+            comment: ''
+            column: prix_trait
+        prixExamLabo:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+            comment: ''
+            column: prix_exam_labo
+        prixTotal:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+            comment: ''
+            column: prix_total
+        dateFacture:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+            comment: ''
+            column: date_facture
+    manyToOne:
+        idpatient:
+            targetEntity: Patient
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idPatient:
+                    referencedColumnName: idPatient
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

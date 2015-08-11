@@ -1,0 +1,24 @@
+medecin_i_rendezvous:
+    resource: "@MedecinIBundle/Resources/config/routing/rendezvous.yml"
+    prefix:   /rendezvous
+
+medecin_i_rdvdisponible:
+    resource: "@MedecinIBundle/Resources/config/routing/rdvdisponible.yml"
+    prefix:   /rdvdisponible
+
+medecin_i_fichepatient:
+    resource: "@MedecinIBundle/Resources/config/routing/fichepatient.yml"
+    prefix:   /fichepatient
+
+homepage:
+    path:     /home
+    defaults: { _controller: MedecinIBundle:Default:index }
+medecin_i_patient:
+    resource: "@MedecinIBundle/Resources/config/routing/patient.yml"
+    prefix:   /patient
+
+medecin_i_dossiermedical:
+    resource: "@MedecinIBundle/Resources/config/routing/dossiermedical.yml"
+    prefix:   /dossiermedical
+
+    

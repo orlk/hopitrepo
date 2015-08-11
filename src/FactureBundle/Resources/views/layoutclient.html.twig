@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}{% endblock %}{% block title1 %}{% endblock %}</title>
+        <link href="{{asset('css/style.css')}}" rel="stylesheet" type="text/css"  media="all" />
+        <link href="{{asset('font/css.css')}}" rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{{asset('css/responsiveslides.css')}}">
+        <script src="{{asset('js/jquery.min.js')}}"></script>
+        <script src="{{asset('js/responsiveslides.min.js')}}"></script>
+        <script>
+            // You can also use "$(window).load(function() {"
+            $(function () {
+
+                // Slideshow 1
+                $("#slider1").responsiveSlides({
+                    maxwidth: 1600,
+                    speed: 600
+                });
+            });
+        </script>
+    {% block stylesheets %}{% endblock %}  {% block stylesheets1 %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+</head>
+<body>
+
+    <div class="wrap">
+        <!---start-header--->
+        <div class="header" id="header">
+            <!---start-logo--->
+            <div class="logo">
+                <a href=""><img src="{{asset('images/logo.png')}}" /></a>
+            </div>
+            <!---start-logo--->
+            <!---start-top-nav--->
+            <div class="top-nav">
+                <ul>
+                    <li ><a href="{{path('facture_homepage')}}">Home</a></li>
+                        {% if s== null%}
+                        <li><a href="">About</a></li>
+                        <li><a href="">Staff</a></li>
+                        <li><a href="{{path('Contact')}}" id="contactlink">Contact</a></li>
+                        <li>    
+                            <a id="loginlink" href="{{path('facture_homepage')}}"> Login</a>
+                        </li>  
+
+
+                    {% else%}
+                        <li><a href="{{path('facture_list')}}" id="facturelink">Facture</a></li>
+                        <li><a href="{{path('Dossier')}}" id="dossierlink">Dossier Médicale</a></li>
+                        <li><a href="{{path('Contact')}}" id="contactlink">Contact</a></li>
+
+                        <li><a href="{{path('logout')}}" id="contactlink">logout</a></li>{% endif %}
+                    </ul>
+                </div>
+                <div class="clear"> </div>
+                <!---End-top-nav--->
+            </div>
+        </div>
+        <div class="image-slider">
+            <!-- Slideshow 1 -->
+            <ul class="rslides" id="slider1">
+                <li><img src="{{asset('images/slider3.jpg') }}" alt=""></li>
+                <li><img src="{{ asset('images/slider2.jpg')}}" alt=""></li>
+                <li><img src="{{ asset('images/slider1.jpg')}}" alt=""></li>
+            </ul>
+            <!-- Slideshow 2 -->
+        </div>
+    {% block body %}{% endblock %}
+     {% block body1 %}{% endblock %}
+
+    <script>
+
+        var uri = window.location.pathname;
+
+        if (uri == "/GestionHopital/web/app_dev.php/")
+        {
+
+            $("#loginlink").click(function (e) {
+                // Prevent a page reload when a link is pressed
+                e.preventDefault();
+                // Call the scroll function
+                $('html,body').animate({
+                    scrollTop: $("#loginform").offset().top},
+                'slow');
+            });
+        }
+    </script>
+    <script>
+        
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+Medecin:
+    type: entity
+    table: medecin
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        cin:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+        nom:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+        prenom:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+        email:
+            type: string
+            nullable: false
+            length: 100
+            fixed: false
+            comment: ''
+        telephone:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+        adresse:
+            type: string
+            nullable: false
+            length: 200
+            fixed: false
+            comment: ''
+        login:
+            type: string
+            nullable: false
+            length: 100
+            fixed: false
+            comment: ''
+        password:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+        specialite:
+            type: string
+            nullable: false
+            length: 30
+            fixed: false
+            comment: ''
+        numordre:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: numOrdre
+    lifecycleCallbacks: {  }

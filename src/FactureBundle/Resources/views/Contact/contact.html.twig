@@ -1,0 +1,88 @@
+{% extends "FactureBundle::layoutclient.html.twig"%}
+{% block stylesheets %}
+    <style>
+        .contact-form{
+            left: 320px;
+            margin-bottom: 40px;
+        }
+    </style>
+{% endblock %}
+{% block body  %}
+    <div class="col span_2_of_3">
+        <div class="contact-form" id="contactform">
+            <div>
+            <h3 style="left: 135px;position: relative">Contacter Votre Médecin</h3>{% if m==null %} <h4 style="color:rgba(123, 124, 126, 0.53);left: 135px;position: relative">envoyer un email ..</h4>{% elseif m=="true" %}<h4 style="color:rgba(0, 128, 0, 0.53);left: 135px;position: relative">Votre Email A Eté Envoyé Avec Succés ...</h4> </h4>{% else  %}<h4 style="color:red;left: 135px;position: relative">Echec...</h4>  {% endif %}
+            </div>
+            <form method="POST" >
+                {% if s== null%}
+                    <div>
+                        <span><label>NAME</label></span>
+                        <span><input name="name" type="text" class="textbox"></span>
+                    </div>
+                    <div>
+                        <span><label>E-MAIL</label></span>
+                        <span><input name="email" type="text" class="textbox" required="true"></span>
+                    </div>
+                {% endif %}
+                <div>
+                    <span><label>Email Medecin</label></span>
+                    <span><select class="textbox" name="emailto">
+                            {% for item in medecins%}
+                                <option >{{item.email}}</option>
+                            {%endfor %}
+                        </select></span>
+                </div>
+                <div>
+                    <span><label>Subject</label></span>
+                    <span><input name="subject" type="text" class="textbox" required="true"></span>
+                </div>
+                <div>
+                    <span><label>Message</label></span>
+                    <span><textarea name="message" required> </textarea></span>
+                </div>
+                        <div >
+                    <span><input type="submit" value="Envoyer" id="sub" style="position: relative;left: 346px"></span>
+                </div>
+            </form>
+            <div style="bottom: 10px;position: fixed;right: 60px">
+                <a href="#" id="back"><img  src="{{asset('images/arrow-up.png')}}" /> </a>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+
+        $("#contactlink").click(function (e) {
+            // Prevent a page reload when a link is pressed
+            e.preventDefault();
+            // Call the scroll function
+            $('html,body').animate({
+                scrollTop: $("#contactform").offset().top},
+            'slow');
+        });
+    </script> 
+    <script>
+
+        window.onload = function ()
+        {
+            // Call the scroll function
+            $('html,body').animate({
+                scrollTop: $("#contactform").offset().top},
+            'slow');
+        };
+    </script>
+
+
+    <script>
+        $("#back").click(function (e) {
+            // Prevent a page reload when a link is pressed
+            e.preventDefault();
+            // Call the scroll function
+            $('html,body').animate({
+                scrollTop: $("#header").offset().top},
+            'slow');
+        });
+
+    </script>
+{%endblock body  %}

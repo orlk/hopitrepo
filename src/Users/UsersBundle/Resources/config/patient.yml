@@ -1,0 +1,16 @@
+#/**
+# * Description of patient
+# *
+# * @author Hichem
+# */
+services:
+    sonata.admin.patient:
+        class: Users\UsersBundle\Admin\PatientAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "gestion de patiens/compte", label: "gestion des pations" }
+        arguments:
+            - ~
+            - Users\UsersBundle\Entity\Patient
+            - 'SonataAdminBundle:CRUD'
+        calls:
+            - [ setTranslationDomain, [UsersUsersBundle]]

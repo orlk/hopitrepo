@@ -1,0 +1,17 @@
+{# empty Twig template #}
+{% extends '::base.html.twig' %}
+{% block contenent %}
+
+    <h1>Patient creation</h1>
+
+    {{ form(form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('patient') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+  {% endblock %}
+

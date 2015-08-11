@@ -1,0 +1,78 @@
+Fichepatient:
+    type: entity
+    table: fichepatient
+    indexes:
+        codeDm:
+            columns:
+                - codeDm
+    id:
+        numFiche:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: num_fiche
+            generator:
+                strategy: IDENTITY
+    fields:
+        taille:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            comment: ''
+        poid:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            comment: ''
+        tension:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            comment: ''
+        temperature:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            comment: ''
+        perimetre:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            comment: ''
+        groupeSanguin:
+            type: string
+            nullable: false
+            length: 30
+            fixed: false
+            comment: ''
+            column: groupe_sanguin
+        datecreation:
+            type: datetime
+            nullable: false
+            comment: ''
+            default: CURRENT_TIMESTAMP
+            column: dateCreation
+        remarque:
+            type: string
+            nullable: false
+            length: 100
+            fixed: false
+            comment: ''
+    manyToOne:
+        codedm:
+            targetEntity: Dossiermedical
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                codeDm:
+                    referencedColumnName: codeDm
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

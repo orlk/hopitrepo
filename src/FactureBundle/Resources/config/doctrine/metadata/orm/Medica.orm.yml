@@ -1,0 +1,46 @@
+Medica:
+    type: entity
+    table: medica
+    id:
+        idmedica:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: Idmedica
+            generator:
+                strategy: IDENTITY
+    fields:
+        nommedica:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+            comment: ''
+            column: Nommedica
+        typemedica:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+            comment: ''
+            column: Typemedica
+        quantitemedica:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+        prix:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            comment: ''
+        libelle:
+            type: string
+            nullable: false
+            length: 225
+            fixed: false
+            comment: ''
+    lifecycleCallbacks: {  }

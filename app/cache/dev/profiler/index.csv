@@ -1,0 +1,12 @@
+f21338,::1,GET,http://localhost/hoptialplus_web.git/web/app_dev.php/app_dev.php,1439231895,bdd2b7
+bdd2b7,::1,GET,http://localhost/hoptialplus_web.git/web/app_dev.php/app_dev.php,1439231895,
+2a7089,::1,GET,http://localhost/hoptialplus_web.git/web/app_dev.php/,1439232416,
+91a248,::1,GET,http://localhost/hoptialplus_web.git/web/app_dev.php/login,1439232424,
+9e177a,::1,GET,http://localhost/hoptialplus_web.git/web/app_dev.php/register/,1439232434,
+4291c8,::1,POST,http://localhost/hoptialplus_web.git/web/app_dev.php/register/,1439232464,
+5b298d,::1,GET,http://localhost/hoptialplus_web.git/web/app_dev.php/login,1439232590,
+e33d5d,::1,POST,http://localhost/hoptialplus_web.git/web/app_dev.php/login_check,1439232595,
+ec0430,::1,GET,http://localhost/hoptialplus_web.git/web/app_dev.php/,1439232596,
+2d9919,::1,GET,http://localhost/hoptialplus_web.git/web/app_dev.php/admin,1439232607,
+176e12,::1,GET,http://localhost/hoptialplus_web.git/web/app_dev.php/admin/,1439232610,
+eafbe7,::1,GET,http://localhost/hoptialplus_web.git/web/app_dev.php/admin/dashboard,1439232614,

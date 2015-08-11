@@ -1,0 +1,20 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_driver: pdo_mysql
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: hopital22
+    database_user: root
+    database_password: null
+    mailer_transport: gmail
+    mailer_host: smtp.gmail.com
+    mailer_user: a.h.hichem@gmail.com
+    mailer_password: h.hichem@1989
+    locale: fr
+    secret: ddb73266eeb2e96b85109a4164a5d1d4c
+    debug_toolbar: true
+    debug_redirects: false
+    use_assetic_controller: true
+    
+    
+    

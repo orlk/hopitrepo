@@ -1,0 +1,49 @@
+{% extends 'MedecinIBundle::FichePatient.html.twig' %}
+
+{% block contenent %}
+    <h1 class="titre_d">liste des fiches</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Numero de fiche</th>
+               
+                <th>Datecreation</th>
+               
+                
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('fichepatient_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+               
+                <td>{% if entity.datecreation %}{{ entity.datecreation|date('Y-m-d H:i:s') }}{% endif %}</td>
+               
+                <td>
+                <ul>
+                    <li class="bttnL">
+                        <a href="{{ path('fichepatient_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    
+                </ul>
+                </td>
+            </tr>
+       
+        {% endfor %}
+             <tr>
+              <td class="bttnL">   
+                 
+  
+        <a href="{{ path('dossiermedical') }}">
+            Back
+        </a>
+   </td>
+            </tr>
+        </tbody>
+        
+    </table>
+
+       
+  {% endblock %}              
+    

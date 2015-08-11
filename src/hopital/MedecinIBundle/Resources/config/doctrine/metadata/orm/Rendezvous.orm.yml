@@ -1,0 +1,56 @@
+Rendezvous:
+    type: entity
+    table: rendezvous
+    indexes:
+        cinM:
+            columns:
+                - cinM
+    id:
+        code:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        cinP:
+            type: string
+            nullable: false
+            length: 20
+            fixed: false
+            comment: ''
+            column: cin_p
+        date:
+            type: date
+            nullable: false
+            comment: ''
+        heure:
+            type: time
+            nullable: false
+            comment: ''
+        commentaire:
+            type: string
+            nullable: false
+            length: 100
+            fixed: false
+            comment: ''
+        validation:
+            type: string
+            nullable: false
+            length: 20
+            fixed: false
+            comment: ''
+            default: 'Non accepté'
+    manyToOne:
+        cinm:
+            targetEntity: Medecin
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                cinM:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

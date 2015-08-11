@@ -1,0 +1,53 @@
+
+
+{% trans_default_domain 'FOSUserBundle' %}
+<br>
+<div class="container">
+    <div class="row">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="text-center">
+                            <h3 class="text-center">Mot De Passe Oublié?</h3>
+                            <p>Si vous avez oublié votre mot de passe - réinitialiser ici.</p>
+                            <div class="panel-body">
+
+                                <form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="fos_user_resetting_request">
+                                    <fieldset>
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-user color-blue"></i></span>
+                                                <!--EMAIL ADDRESS-->
+
+                                                <input  type="text" id="username" name="username" required="required" placeholder="Nom de l'utilisateur" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="btn btn-lg btn-primary btn-block" value="{{ 'resetting.request.submit'|trans }}" type="submit">
+                                        </div>
+                                    </fieldset>
+                                </form><!--/end form-->
+                                 {% if invalid_username is defined %}
+                                    <div class="alert alert-warning">
+                                       
+                                        <a href="#" class="close" data-dismiss="alert">&times;</a>
+                                        <strong>Warning!</strong> {{ 'resetting.request.invalid_username'|trans({'%username%': invalid_username}) }}
+                                  
+                                    </div>
+
+                                 {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+

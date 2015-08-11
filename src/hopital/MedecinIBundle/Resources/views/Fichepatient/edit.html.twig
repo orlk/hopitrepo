@@ -1,0 +1,59 @@
+{% extends 'MedecinIBundle::FichePatient.html.twig' %}
+
+{% block contenent %}
+    <head>
+<link  rel="stylesheet" type="text/css"  media="all" href={{asset('web/css/style.css')}} />
+</head>
+ <h1 class="titre_d">Editer une fiche </h1>
+   <form action="" method="POST">
+            <table >
+                <tr>
+                    <td>{{form_label(edit_form.taille, "Taille: ")}}</td>
+                    <td>{{form_widget(edit_form.taille)}}</td>
+                </tr>
+                <tr>
+                    <td>{{form_label(edit_form.poid, "Poids: ")}}</td>
+                    <td>{{form_widget(edit_form.poid)}}</td>
+                </tr>
+                <tr> 
+                    <td> {{form_label(edit_form.tension, "Tension: ")}}</td>
+                    <td>{{form_widget(edit_form.tension)}}</td>
+                </tr>
+                <tr> 
+                    <td> {{form_label(edit_form.temperature, "Temperature: ")}}</td>
+                    <td>{{form_widget(edit_form.temperature)}}</td>
+                </tr>
+                <tr> 
+                    <td> {{form_label(edit_form.perimetre, "Perimetre: ")}}</td>
+                    <td>{{form_widget(edit_form.perimetre)}}</td>
+                </tr>
+                <tr> 
+                    <td> {{form_label(edit_form.groupeSanguin, "groupe Sanguin: ")}}</td>
+                    <td>{{form_widget(edit_form.groupeSanguin)}}</td>
+                </tr>
+                 <tr> 
+                    <td> {{form_label(edit_form.datecreation, "Date de creation: ")}}</td>
+                    <td>{{form_widget(edit_form.datecreation)}}</td>
+                </tr>
+                 <tr> 
+                    <td> {{form_label(edit_form.remarque, "Remarque: ")}}</td>
+                    <td>{{form_widget(edit_form.remarque)}}</td>
+                </tr>
+                <tr> 
+                    <td> {{form_label(edit_form.codedm, "Code de dossier: ")}}</td>
+                    <td>{{form_widget(edit_form.codedm)}}</td>
+                </tr>
+                <tr><td>{{ form_widget(edit_form.Valider, { 'attr': {'class': 'bttn'} })}}</td>
+                 <td class="bttnL">   
+                 
+  
+        <a href="{{ path('dossiermedical') }}">
+            Back
+        </a>
+   </td></tr>
+             {{ form_rest(edit_form)}}
+            </table>
+        </form>
+{% endblock %}
+
+

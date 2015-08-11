@@ -1,0 +1,33 @@
+{% extends 'MedecinIBundle::CalendrierM.html.twig' %}
+
+{% block contenent %}
+    <head>
+<link  rel="stylesheet" type="text/css"  media="all" href={{asset('web/css/style.css')}} />
+</head>
+ <h1 class="titre_d">Votre calendrier </h1>
+   <form action="" method="POST">
+            <table >
+                <tr>
+                    <td>{{form_label(form.dater, "Date disponible: ")}}</td>
+                    <td>{{form_widget(form.dater)}}</td>
+                </tr>
+                <tr>
+                    <td>{{form_label(form.heurer, "Heure disponible: ")}}</td>
+                    <td>{{form_widget(form.heurer)}}</td>
+                </tr>
+                
+                <tr><td>{{ form_widget(form.Valider, { 'attr': {'class': 'bttn'} })}}</td>
+                 <td class="bttnL">   
+                 
+  
+        <a href="{{ path('rdvdisponible') }}">
+            Back
+        </a>
+   </td></tr>
+                <tr>
+                    <td>{{form_widget(form.cinm,{'attr': { 'value' : app.user.id   } })}}</td>
+                </tr>
+             {{ form_rest(form)}}
+            </table>
+        </form>
+{% endblock %}

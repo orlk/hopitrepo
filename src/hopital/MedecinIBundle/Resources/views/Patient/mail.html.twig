@@ -1,0 +1,31 @@
+{% extends '::base.html.twig' %}
+
+{% block contenent %}
+
+    <head>
+        <title>Envoyer un mail</title>
+    </head>
+    <form action ="{{ path ('patient_mailsend') }}" methode='POST'>
+    <table>
+        <tr>
+            <td> Sujet:</td>
+            <td> <input type ="text" name="Subject"> </td>
+        </tr>
+        <tr>
+            <td>email:</td>
+            <td> <input type ="text" name="email"> </td>
+        </tr>
+        <tr>
+            <td> text:</td>
+            <td> <textarea  name="message"></textarea> </td>
+        </tr>
+        <tr>
+            
+            <td>  <input type="submit" value="send"/> </td>
+        </tr>
+    </table>
+    
+        
+    </form>
+
+{% endblock  %}

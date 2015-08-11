@@ -1,0 +1,36 @@
+facture_homepage:
+    path:     /fh
+    defaults: { _controller: FactureBundle:Default:index }
+logout:
+    path:     /Login
+    defaults: { _controller: FactureBundle:Default:logout }
+facture_list:
+    path:     /Factures
+    defaults: { _controller: FactureBundle:Facture:List }
+Contact:
+    path:     /contact
+    defaults: { _controller: FactureBundle:Contact:contact } 
+Dossier:
+    path:     /DossierMedicale
+    defaults: { _controller: FactureBundle:DossierMed:Dossier }
+Admin:
+    path:     /admins
+    defaults: { _controller: FactureBundle:Admin:index }
+logoutadmin:
+    path:     /Logoutadmin
+    defaults: { _controller: FactureBundle:Admin:logout }
+medicalist:
+    path:     /medicament
+    defaults: { _controller: FactureBundle:Admin:List }
+medicadelete:
+    path:     /delete/{id}
+    defaults: { _controller: FactureBundle:Admin:Delete }
+medicaupdate:
+    path:     /update/{id}
+    defaults: { _controller: FactureBundle:Admin:update }
+medicaajout:
+    path:     /ajout
+    defaults: { _controller: FactureBundle:Admin:ajout }
+medicapersist:
+    path:     /persist
+    defaults: { _controller: FactureBundle:Admin:persist }

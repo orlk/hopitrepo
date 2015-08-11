@@ -1,0 +1,8 @@
+users_users_homepage:
+    path:     /
+    defaults: { _controller: UsersUsersBundle:Acceuil:index }
+users_users_Acceuil:
+    path:     /Acceuil
+    defaults: { _controller: UsersUsersBundle:Acceuil:index }
+
+

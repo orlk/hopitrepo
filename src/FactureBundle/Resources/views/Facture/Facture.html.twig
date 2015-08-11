@@ -1,0 +1,129 @@
+{% extends "FactureBundle::layoutclient.html.twig"%}
+      {% block title %} List des Factures{% endblock %}
+      {% block stylesheets %}
+    <style>
+
+        .search{
+
+            width:  900px;
+          
+        }
+        table{
+           
+            margin-bottom: 40px;
+        }
+    </style>
+{% endblock %}
+  {% block body %} 
+                         <div id="factureform" >
+                 <label class="titretable">Liste des Factures</label>
+                 <div class="search"> <input type="search" class="light-table-filter" data-table="order-table" placeholder="Search ....."/></div>
+                 <table class="order-table">
+                     <thead>
+                     <tr><th>ID FACTURE</th>
+                     <th>prix consultation</th>
+                     <th>prix chambre</th>
+                     <th>prix traitement</th>
+                     <th>prix examn laboratoire</th>
+                     <th>prix total</th>
+                     <th>date facture</th>
+              
+                     </tr></thead>
+                     <tbody>
+                 {% for item in factures %}
+                     <tr>
+                         <td>{{item.idfacture}}</td>   
+                         <td>{{item.prixConsultation}}</td>  
+                         <td>{{item.prixChambre}}</td>  
+                         <td>{{item.prixTrait}}</td>  
+                         <td>{{item.prixExamLabo}}</td>  
+                         <td>{{item.prixTotal}}</td>  
+                          <td>{{item.dateFacture}}</td> 
+                     
+                         
+                     </tr>
+                 </tbody>
+                 {% endfor %}
+                 </table>
+                 
+                 <div style="bottom: 10px;position: fixed;right: 60px">
+            <a href="#" id="back"><img onclick="break;" src="{{asset('images/arrow-up.png')}}" /> </a>
+</div>
+             </div>
+                     <script>
+        
+        $("#facturelink").click(function (e) {
+            // Prevent a page reload when a link is pressed
+            e.preventDefault();
+            // Call the scroll function
+                $('html,body').animate({
+        scrollTop: $("#factureform").offset().top},
+        'slow');
+        });
+</script>
+<script>
+         $("#back").click(function (e) {
+            // Prevent a page reload when a link is pressed
+            e.preventDefault();
+            // Call the scroll function
+            $('html,body').animate({
+                scrollTop: $("#header").offset().top},
+            'slow');
+        });
+        
+    </script>
+    
+    
+<script>
+    
+    (function(document) {
+	'use strict';
+
+	var LightTableFilter = (function(Arr) {
+
+		var _input;
+
+		function _onInputEvent(e) {
+			_input = e.target;
+			var tables = document.getElementsByClassName(_input.getAttribute('data-table'));
+			Arr.forEach.call(tables, function(table) {
+				Arr.forEach.call(table.tBodies, function(tbody) {
+					Arr.forEach.call(tbody.rows, _filter);
+				});
+			});
+		}
+
+		function _filter(row) {
+			var text = row.textContent.toLowerCase(), val = _input.value.toLowerCase();
+			row.style.display = text.indexOf(val) === -1 ? 'none' : 'table-row';
+		}
+
+		return {
+			init: function() {
+				var inputs = document.getElementsByClassName('light-table-filter');
+				Arr.forEach.call(inputs, function(input) {
+					input.oninput = _onInputEvent;
+				});
+			}
+		};
+	})(Array.prototype);
+
+	document.addEventListener('readystatechange', function() {
+		if (document.readyState === 'complete') {
+			LightTableFilter.init();
+		}
+	});
+
+})(document);
+</script>
+  <script>
+
+        window.onload = function ()
+        {
+            // Call the scroll function
+            $('html,body').animate({
+                scrollTop: $("#factureform").offset().top},
+            'slow');
+        };
+    </script>
+  {% endblock %}

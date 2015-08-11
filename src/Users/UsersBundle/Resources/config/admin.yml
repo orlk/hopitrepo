@@ -1,0 +1,16 @@
+#/** Description of admin service @author Hichem*/
+
+services:
+    sonata.admin.post:
+        class: Users\UsersBundle\Admin\AdminsAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "gestion de patiens/compte", label: "gestion des Comptes" }
+
+        arguments:
+            - ~
+            - Users\UsersBundle\Entity\Users
+            - 'SonataAdminBundle:CRUD'
+        calls:
+            - [ setTranslationDomain, [UsersUsersBundle]]
+
+  

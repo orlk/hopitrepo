@@ -1,0 +1,45 @@
+{% extends "FactureBundle::layoutadmin.html.twig"%}
+      {% block title %}Admin{% endblock %}
+  {% block body %} 
+{% if s==null%}
+<div id="loginform">
+        <div class="col span_2_of_3">
+            <div class="login-form">
+                <form action="" method="POST" >
+                    <span> <label>Login </label>{{form_widget(form.login,{ 'id': 'logininput' })}}</span>
+                    <span> <label>Password </label>{{form_widget(form.password,{ 'id': 'passwordinput' })}}</span>
+                    <input type="submit" value="Login" id="loginsubmit"/>
+                </form>
+            </div>
+        </div>
+                               <div style="bottom: 10px;position: fixed;right: 60px">
+            <a href="#" id="back"><img onclick="break;" src="{{asset('images/arrow-up.png')}}" /> </a>
+</div>
+    </div>
+                  
+{% else%}
+{% endif %}
+
+<script>
+         $("#back").click(function (e) {
+            // Prevent a page reload when a link is pressed
+            e.preventDefault();
+            // Call the scroll function
+            $('html,body').animate({
+                scrollTop: $("#header").offset().top},
+            'slow');
+        });
+        
+    </script>
+    
+     <script>
+
+        window.onload = function ()
+        {
+            // Call the scroll function
+            $('html,body').animate({
+                scrollTop: $("#loginform").offset().top},
+            'slow');
+        };
+    </script>
+    {% endblock %}  

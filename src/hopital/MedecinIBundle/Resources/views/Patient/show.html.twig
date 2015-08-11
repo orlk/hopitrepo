@@ -1,0 +1,63 @@
+{% extends 'MedecinIBundle::Patients.html.twig' %}
+
+{% block contenent %}
+    <h1  class="titre_d">Patient n°{{ entity.id }}</h1>
+
+    <table class="record_properties">
+        <tbody>
+           
+            <tr>
+                <th>Cin</th>
+                <td>{{ entity.cin }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ entity.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ entity.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ entity.email }}</td>
+            </tr>
+            <tr>
+                <th>Telephone</th>
+                <td>{{ entity.telephone }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ entity.adresse }}</td>
+            </tr>
+            
+            <tr>
+                <th>Code</th>
+                <td>{{ entity.code }}</td>
+            </tr>
+            <tr>
+                <th>Date de naissance</th>
+                <td>{{ entity.datenaissance }}</td>
+            </tr>
+            <tr>
+                <th>Sexe</th>
+                <td>{{ entity.sexe }}</td>
+            </tr>
+            
+            <tr>
+                <td class="bttnL"> <a href="{{ path('patient') }}">
+            Back
+        </a> </td>
+        <td class="bttnL"><a href="{{ path('my_app_mail_form') }}">
+           Envoyer un mail
+        </a>
+   </td>
+            </tr>
+        </tbody>
+    </table>
+
+        
+        
+
+
+{% endblock %}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="FactureBundle\Entity\Rendezvous" table="rendezvous">
+    <id name="code" type="integer" column="code">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="cinP" type="string" column="cin_p" length="20" nullable="false"/>
+    <field name="date" type="date" column="date" nullable="false"/>
+    <field name="heure" type="time" column="heure" nullable="false"/>
+    <field name="commentaire" type="string" column="commentaire" length="100" nullable="false"/>
+    <field name="cinm" type="string" column="cinM" length="20" nullable="false"/>
+    <field name="validation" type="string" column="validation" length="20" nullable="false"/>
+  </entity>
+</doctrine-mapping>

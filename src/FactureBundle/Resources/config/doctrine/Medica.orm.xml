@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="FactureBundle\Entity\Medica" table="medica">
+    <id name="idmedica" type="integer" column="Idmedica">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="nommedica" type="string" column="Nommedica" length="255" nullable="true"/>
+    <field name="typemedica" type="string" column="Typemedica" length="255" nullable="true"/>
+    <field name="quantitemedica" type="integer" column="quantitemedica" nullable="true"/>
+    <field name="prix" type="float" column="prix" precision="10" scale="0" nullable="false"/>
+    <field name="libelle" type="string" column="libelle" length="225" nullable="false"/>
+  </entity>
+</doctrine-mapping>

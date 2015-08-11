@@ -1,0 +1,42 @@
+{% extends 'MedecinIBundle::RendezVous.html.twig' %}
+
+{% block contenent %}
+    <h1 class="titre_d">Rendez-vous {{ entity.code }} </h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Cin de patient :</th>
+                <td>{{ entity.cinP }}</td>
+            </tr>
+            <tr>
+                <th>Date :</th>
+                <td>{{ entity.date|date('Y-m-d ') }}</td>
+            </tr>
+            <tr>
+                <th>Heure :</th>
+                <td>{{ entity.heure|date('H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Commentaire :</th>
+                <td>{{ entity.commentaire }}</td>
+            </tr>
+            <tr>
+                <th>Etat :</th>
+                <td>{{ entity.validation }}</td>
+            </tr>
+             <tr class="bttnL">
+                 <td><a href="{{ path('rendezvous_accepte', { 'code': entity.code }) }}">
+            Accepter
+        </a></td>
+        <td><a href="{{ path('rendezvous_refuse', { 'code': entity.code }) }}">
+            Refuser 
+        </a></td>
+        <td><a href="{{ path('rendezvous') }}">
+            Back </td>
+            </tr>
+        </tbody>
+    </table>
+
+      
+{% endblock %}

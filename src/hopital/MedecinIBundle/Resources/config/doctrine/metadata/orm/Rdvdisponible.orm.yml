@@ -1,0 +1,46 @@
+Rdvdisponible:
+    type: entity
+    table: rdvdisponible
+    indexes:
+        cinM:
+            columns:
+                - cinM
+    id:
+        numrd:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: numRd
+            generator:
+                strategy: IDENTITY
+    fields:
+        dater:
+            type: date
+            nullable: false
+            comment: ''
+            column: dateR
+        heurer:
+            type: time
+            nullable: false
+            comment: ''
+            column: heureR
+        dispo:
+            type: string
+            nullable: false
+            length: 20
+            fixed: false
+            comment: ''
+            default: Disponible
+    manyToOne:
+        cinm:
+            targetEntity: Medecin
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                cinM:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

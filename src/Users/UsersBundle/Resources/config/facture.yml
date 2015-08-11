@@ -1,0 +1,16 @@
+#/**
+# * Description of facture
+# *
+# * @author sarah
+# */
+services:
+    sonata.admin.facture:
+        class: Users\UsersBundle\Admin\FactureAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "gestion des factures", label: "gestion des factures" }
+        arguments:
+            - ~
+            - Users\UsersBundle\Entity\Facture
+            - 'SonataAdminBundle:CRUD'
+        calls:
+            - [ setTranslationDomain, [UsersUsersBundle]]

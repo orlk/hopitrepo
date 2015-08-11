@@ -1,0 +1,59 @@
+Chambre:
+    type: entity
+    table: chambre
+    indexes:
+        idPatient:
+            columns:
+                - idPatient
+    uniqueConstraints:
+        nbrchambre:
+            columns:
+                - numchambre
+    id:
+        idchambre:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        numchambre:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+        typechambre:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+            comment: ''
+        dateArriv:
+            type: date
+            nullable: true
+            comment: ''
+            column: date_arriv
+        dateSort:
+            type: date
+            nullable: true
+            comment: ''
+            column: date_sort
+        disponibiliter:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            default: '1'
+    manyToOne:
+        idpatient:
+            targetEntity: Patient
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idPatient:
+                    referencedColumnName: idPatient
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

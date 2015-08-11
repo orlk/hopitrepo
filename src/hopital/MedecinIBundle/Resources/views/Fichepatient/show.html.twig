@@ -1,0 +1,60 @@
+{% extends 'MedecinIBundle::FichePatient.html.twig' %}
+
+{% block contenent %}
+    <h1 class="titre_d">Fiche patient n°{{ entity.id }} </h1>
+
+    <table class="record_properties">
+        <tbody>
+           
+            <tr>
+                <th>Taille</th>
+                <td>{{ entity.taille }}</td>
+            </tr>
+            <tr>
+                <th>Poid</th>
+                <td>{{ entity.poid }}</td>
+            </tr>
+            <tr>
+                <th>Tension</th>
+                <td>{{ entity.tension }}</td>
+            </tr>
+            <tr>
+                <th>Temperature</th>
+                <td>{{ entity.temperature }}</td>
+            </tr>
+            <tr>
+                <th>Perimetre</th>
+                <td>{{ entity.perimetre }}</td>
+            </tr>
+            <tr>
+                <th>Groupesanguin</th>
+                <td>{{ entity.groupeSanguin }}</td>
+            </tr>
+            <tr>
+                <th>Datecreation</th>
+                <td>{{ entity.datecreation|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Remarque</th>
+                <td>{{ entity.remarque }}</td>
+            </tr>
+      
+
+            <tr class="bttnL">
+                <td> <a href="{{ path('fichepatient') }}">
+         liste
+        </a>
+                </td>
+                <td>
+        <a href="{{ path('fichepatient_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+                </td>
+                <td>
+    {{ form(delete_form) }}
+                </td>
+    <tr>
+   </tbody>
+    </table>
+
+{% endblock %}

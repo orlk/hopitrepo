@@ -1,0 +1,36 @@
+{% extends 'MedecinIBundle::CalendrierM.html.twig' %}
+
+{% block contenent %}
+    <h1 class="titre_d">Date {{ entity.id }} </h1>
+
+    <table class="record_properties">
+        <tbody>
+           
+            <tr>
+                <th>Date</th>
+                <td>{{ entity.dater|date('Y-m-d') }}</td>
+            </tr>
+            <tr>
+                <th>Heure</th>
+                <td>{{ entity.heurer|date('H:i:s')}}</td>
+            </tr>
+            <tr>
+                <th>Disponibilité</th>
+                <td>{{ entity.dispo }}</td>
+            </tr>
+            <tr> <td class="bttnL"> <a href="{{ path('rdvdisponible_edit', { 'id': entity.id  }) }}">
+            Edit
+                     </a> 
+                </td>
+                <td class="bttnL"><a href="{{ path('rdvdisponible') }}">
+            Back 
+        </a>  </td>
+            
+                <td class="dc-profile">{{ form(delete_form) }} </td>
+            </tr>
+        </tbody>
+    </table>
+
+       
+ 
+{% endblock %}

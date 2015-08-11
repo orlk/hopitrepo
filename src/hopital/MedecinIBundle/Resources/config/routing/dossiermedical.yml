@@ -1,0 +1,31 @@
+dossiermedical:
+    path:     /
+    defaults: { _controller: "MedecinIBundle:Dossiermedical:finddm" }
+
+dossiermedical_show:
+    path:     /{codeDm}/show
+    defaults: { _controller: "MedecinIBundle:Dossiermedical:show" }
+
+
+dossiermedical_new:
+    path:     /new
+    defaults: { _controller: "MedecinIBundle:Dossiermedical:add" }
+
+dossiermedical_create:
+    path:     /create
+    defaults: { _controller: "MedecinIBundle:Dossiermedical:create" }
+    requirements: { _method: post }
+
+dossiermedical_edit:
+    path:     /{codeDm}/edit
+    defaults: { _controller: "MedecinIBundle:Dossiermedical:update" }
+
+dossiermedical_update:
+    path:     /{codeDm}/update
+    defaults: { _controller: "MedecinIBundle:Dossiermedical:update" }
+    requirements: { _method: post|put }
+
+dossiermedical_delete:
+    path:     /{codeDm}/delete
+    defaults: { _controller: "MedecinIBundle:Dossiermedical:delete" }
+    requirements: { _method: post|delete }

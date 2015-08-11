@@ -1,0 +1,56 @@
+{% extends 'MedecinIBundle::DossierMedical.html.twig' %}
+
+
+{% block contenent %}
+    <head>
+<link  rel="stylesheet" type="text/css"  media="all" href={{asset('web/css/style.css')}} />
+</head>
+    <h1 class="titre_d">Dossier medical n°{{ entity.codedm }}</h1>
+
+    <table >
+        <tbody>
+            
+            <tr>
+                <th>Nom :</th>
+                <td>{{ entity.codepatient.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom :</th>
+                <td>{{ entity.codepatient.prenom }}</td>
+            </tr>
+              <tr>
+                <th>Date de creation :</th>
+                <td>{{ entity.datecreation|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+              
+<td class="bttnL">
+        <a href="{{ path('dossiermedical_edit', { 'codeDm': entity.codedm }) }}">
+            Edit
+        </a>
+      </td>
+     <td class="bttnL">
+        <a href="{{ path('fichepatient_recherche',{ 'codeDm': entity.codedm }) }}">
+            Fiches
+        </td>
+          <td class="bttnL">   
+                 
+  
+        <a href="{{ path('dossiermedical') }}">
+            Back
+        </a>
+   </td>
+  <td class="dc-profile">   
+    {{ form(delete_form) }}
+        
+        
+
+                </td>
+            </tr>
+            
+        </tbody>
+    </table>
+
+       
+
+   {% endblock %}

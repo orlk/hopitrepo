@@ -1,0 +1,39 @@
+Rdvdisponible:
+    type: entity
+    table: rdvdisponible
+    id:
+        numrd:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: numRd
+            generator:
+                strategy: IDENTITY
+    fields:
+        cinm:
+            type: string
+            nullable: false
+            length: 20
+            fixed: false
+            comment: ''
+            column: cinM
+        dater:
+            type: date
+            nullable: false
+            comment: ''
+            column: dateR
+        heurer:
+            type: time
+            nullable: false
+            comment: ''
+            column: heureR
+        dispo:
+            type: string
+            nullable: false
+            length: 20
+            fixed: false
+            comment: ''
+            default: Disponible
+    lifecycleCallbacks: {  }

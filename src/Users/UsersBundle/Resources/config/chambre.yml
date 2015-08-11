@@ -1,0 +1,16 @@
+#/**
+# * Description of patient
+# *
+# * @author Hichem
+# */
+services:
+    sonata.admin.Chambre:
+        class: Users\UsersBundle\Admin\ChambreAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "gestion des chambres", label: "gestion des chambres" }
+        arguments:
+            - ~
+            - Users\UsersBundle\Entity\Chambre
+            - 'SonataAdminBundle:CRUD'
+        calls:
+            - [ setTranslationDomain, [UsersUsersBundle]]

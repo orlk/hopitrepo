@@ -1,0 +1,42 @@
+{% extends 'MedecinIBundle::CalendrierM.html.twig' %}
+
+{% block contenent %}
+    <h1 class="titre_d">Votre calendrier</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+               
+                <th>Date</th>
+                <th>Heure</th>
+                <th>Disponibilité</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+               
+                <td>{% if entity.dater %}{{ entity.dater|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.heurer|date('H:i:s')}}</td>
+                <td>{{ entity.dispo }}</td>
+                <td>
+                <ul class="bttnL">
+                    <li>
+                        <a href="{{ path('rdvdisponible_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        <tr>
+            <td class="bttnL">   <a href="{{ path('rdvdisponible_new') }}">
+                Nouveau 
+            </a></td>
+        </tr>
+        </tbody>
+    </table>
+
+      
+    {% endblock %}

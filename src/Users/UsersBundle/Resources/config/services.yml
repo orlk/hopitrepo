@@ -1,0 +1,18 @@
+parameters:
+    users_users.authentication.handler.login_handler.class: Users\UsersBundle\Authentication\Handler\LoginHandler
+    users_users.authentication.handler.logout_handler.class: Users\UsersBundle\Authentication\Handler\LogoutHandler
+    users_users.admin.class: Quadspot\BlogBundle\Example
+services:
+    users_users.authentication.handler.login_handler:
+        class:  %users_users.authentication.handler.login_handler.class%
+        arguments:  [@router, @security.context, @translator]
+        tags:
+            - { name: 'monolog.logger', channel: 'security' }
+             
+    users_users.authentication.handler.logout_handler:
+        class:  %users_users.authentication.handler.logout_handler.class%
+        arguments:  [@router]
+        tags:
+            - { name: 'monolog.logger', channel: 'security' }
+
+    

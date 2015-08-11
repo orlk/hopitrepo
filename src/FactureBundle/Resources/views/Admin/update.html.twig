@@ -1,0 +1,75 @@
+{% extends "FactureBundle::layoutadmin.html.twig"%}
+{% block stylesheets %}
+    <style>
+        .contact-form{
+            left: 320px;
+            margin-bottom: 40px;
+        }
+    </style>
+{% endblock %}
+{% block body  %}
+    <div class="col span_2_of_3">
+        <div class="contact-form" id="contactform">
+            <div>
+            <h3 style="left: 135px;position: relative">Modifier Medicament</h3>
+            </div>
+            <form method="POST" action="{{path('medicapersist')}}">
+                    <div>
+                        <span><label>Nom Medicament</label></span>
+                        <span><input name="nom" type="text" value="{{medica.nommedica}}"class="textbox" required></span>
+                    </div>
+                    <div>
+                        <span><label>Type Medicament</label></span>
+                        <span><input name="type" type="text" class="textbox"value="{{medica.typemedica}}" required></span>
+                    </div>
+              
+               
+                <div>
+                    <span><label>Quantité Medicament</label></span>
+                    <span><input name="quantite" type="number" class="textbox" value="{{medica.quantitemedica}}" required></span>
+                </div>
+                <div>
+                    <span><label>Prix Medicament</label></span>
+                    <span><input name="prix" type="number" step="0.01"class="textbox" value="{{medica.prix}}" required></span>
+                </div>
+                 <div>
+                        <span><label> Medicament Libelle</label></span>
+                        <span><input name="libelle" type="text" class="textbox"value="{{medica.libelle}}" required></span>
+                    </div>
+                        <div >
+                    <span><input type="submit" value="Modifier" id="sub" style="position: relative;left: 346px"></span>
+                </div>
+                    <input name="id" value="{{medica.idmedica}}"hidden="true"/>
+            </form>
+            <div style="bottom: 10px;position: fixed;right: 60px">
+                <a href="#" id="back"><img  src="{{asset('images/arrow-up.png')}}" /> </a>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script>
+
+        window.onload = function ()
+        {
+            // Call the scroll function
+            $('html,body').animate({
+                scrollTop: $("#contactform").offset().top},
+            'slow');
+        };
+    </script>
+
+
+    <script>
+        $("#back").click(function (e) {
+            // Prevent a page reload when a link is pressed
+            e.preventDefault();
+            // Call the scroll function
+            $('html,body').animate({
+                scrollTop: $("#header").offset().top},
+            'slow');
+        });
+
+    </script>
+{%endblock body  %}

@@ -1,0 +1,37 @@
+{% extends 'MedecinIBundle::DossierMedical.html.twig' %}
+
+{% block contenent %}
+    <head>
+<link  rel="stylesheet" type="text/css"  media="all" href={{asset('web/css/style.css')}} />
+</head>
+    <h1 class="titre_d">Dossiermedical edit</h1>
+     <form action="{{ path("dossiermedical_edit", { 'codeDm': entity.codedm }) }}" method="POST">
+            <table >
+                <tr>
+                    <td>{{form_label(edit_form.datecreation, "Date de creation: ")}}</td>
+                    <td>{{form_widget(edit_form.datecreation)}}</td>
+                </tr>
+                <tr>
+                    <td>{{form_label(edit_form.codepatient, "Code de patient: ")}}</td>
+                    <td>{{form_widget(edit_form.codepatient)}}</td>
+                </tr>
+                <tr> 
+                   
+                    <td>{{form_widget(edit_form.codemedecin)}}</td>
+                </tr>
+                <tr><td>{{ form_widget(edit_form.Valider, { 'attr': {'class': 'bttn'} })}}</td>
+                <td class="bttnL">   
+                 
+  
+        <a href="{{ path('dossiermedical') }}">
+            Back
+        </a>
+   </td>
+                </tr>
+               {{ form_rest(edit_form)}}
+               
+            </table>
+        </form>
+    
+
+{% endblock %}

@@ -1,0 +1,36 @@
+patient:
+    path:     /
+    defaults: { _controller: "MedecinIBundle:Patient:index" }
+
+patient_show:
+    path:     /{id}/show
+    defaults: { _controller: "MedecinIBundle:Patient:show" }
+
+patient_new:
+    path:     /new
+    defaults: { _controller: "MedecinIBundle:Patient:new" }
+
+patient_create:
+    path:     /create
+    defaults: { _controller: "MedecinIBundle:Patient:create" }
+    requirements: { _method: post }
+
+patient_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MedecinIBundle:Patient:edit" }
+
+patient_update:
+    path:     /{id}/update
+    defaults: { _controller: "MedecinIBundle:Patient:update" }
+    requirements: { _method: post|put }
+
+patient_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MedecinIBundle:Patient:delete" }
+    requirements: { _method: post|delete }
+patient_mail:
+    path:     /redirection
+    defaults: { _controller: "MedecinIBundle:Patient:redirection" }
+patient_mailsend:
+    path:     /sendMail
+    defaults: { _controller: "MedecinIBundle:Patient:sendmail" }  

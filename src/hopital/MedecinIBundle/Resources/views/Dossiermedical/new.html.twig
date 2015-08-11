@@ -1,0 +1,34 @@
+{% extends 'MedecinIBundle::DossierMedical.html.twig' %}
+
+
+{% block contenent %}
+    <head>
+<link  rel="stylesheet" type="text/css"  media="all" href={{asset('web/css/style.css')}} />
+</head>
+ <h1 class="titre_d">création d'un dossier médical </h1>
+   <form action="" method="POST">
+            <table >
+                <tr>
+                    <td>{{form_label(form.datecreation, "Date de creation: ")}}</td>
+                    <td>{{form_widget(form.datecreation)}}</td>
+                </tr>
+                <tr>
+                    <td>{{form_label(form.codepatient, "Code de patient: ")}}</td>
+                    <td>{{form_widget(form.codepatient)}}</td>
+                </tr>
+                
+                <tr><td>{{ form_widget(form.Valider, { 'attr': {'class': 'bttn'} })}}</td>
+                 <td class="bttnL">   
+                 
+  
+        <a href="{{ path('dossiermedical') }}">
+            Back
+        </a>
+   </td></tr>
+                <tr>
+                    <td>{{form_widget(form.codemedecin,{'attr': { 'value' : app.user.id   } })}}</td>
+                </tr>
+             {{ form_rest(form)}}
+            </table>
+        </form>
+{% endblock %}

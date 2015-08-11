@@ -1,0 +1,44 @@
+{# empty Twig template #}
+{% extends 'mailBundle::MailT.html.twig' %}
+
+{% block contenent %}
+<body>
+<h2 class="titre_d"> <strong> Formulaire De Contact</strong> </h2>
+
+
+<p>{{form_errors(form)}}</p>
+
+<form role="form" id="fr" method="POST" action='{{path('my_app_mail_sendpage')}}' {{form_enctype(form)}}>
+    <table >
+                <tr>
+                    <td>{{form_label(form.nom, "Nom: ")}}</td>
+                    <td>{{form_widget(form.nom)}}</td>
+                </tr>
+                <tr>
+                    <td>{{form_label(form.prenom, "Prenom: ")}}</td>
+                    <td>{{form_widget(form.prenom)}}</td>
+                </tr>
+                <tr>
+                    <td>{{form_label(form.from, " À: ")}}</td>
+                    <td>{{form_widget(form.from)}}</td>
+                </tr>
+                <tr>
+                    <td>{{form_label(form.text, "Text: ")}}</td>
+                    <td>{{form_widget(form.text)}}</td>
+                </tr>
+                <tr>
+                   <td class="bttnL"> <a href="{{ path('patient') }}">
+            Back
+        </a> </td>
+                    <td><input class="bttn" type="submit"/></td>
+                   
+                </tr>
+                
+                
+                
+             {{ form_rest(form)}}
+            </table>
+
+</form>
+</body>
+{% endblock  %}

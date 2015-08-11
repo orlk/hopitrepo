@@ -1,0 +1,59 @@
+{% extends 'MedecinIBundle::FichePatient.html.twig' %}
+
+{% block contenent %}
+    <head>
+<link  rel="stylesheet" type="text/css"  media="all" href={{asset('web/css/style.css')}} />
+</head>
+ <h1 class="titre_d">création d'une fiche </h1>
+   <form action="" method="POST">
+            <table >
+                <tr>
+                    <td>{{form_label(form.taille, "Taille: ")}}</td>
+                    <td>{{form_widget(form.taille)}}</td>
+                </tr>
+                <tr>
+                    <td>{{form_label(form.poid, "Poids: ")}}</td>
+                    <td>{{form_widget(form.poid)}}</td>
+                </tr>
+                <tr> 
+                    <td> {{form_label(form.tension, "Tension: ")}}</td>
+                    <td>{{form_widget(form.tension)}}</td>
+                </tr>
+                <tr> 
+                    <td> {{form_label(form.temperature, "Temperature: ")}}</td>
+                    <td>{{form_widget(form.temperature)}}</td>
+                </tr>
+                <tr> 
+                    <td> {{form_label(form.perimetre, "Perimetre: ")}}</td>
+                    <td>{{form_widget(form.perimetre)}}</td>
+                </tr>
+                <tr> 
+                    <td> {{form_label(form.groupeSanguin, "groupe Sanguin: ")}}</td>
+                    <td>{{form_widget(form.groupeSanguin)}}</td>
+                </tr>
+                 <tr> 
+                    <td> {{form_label(form.datecreation, "Date de creation: ")}}</td>
+                    <td>{{form_widget(form.datecreation)}}</td>
+                </tr>
+                 <tr> 
+                    <td> {{form_label(form.remarque, "Remarque: ")}}</td>
+                    <td>{{form_widget(form.remarque)}}</td>
+                </tr>
+                <tr> 
+                    <td> {{form_label(form.codedm, "Code de dossier: ")}}</td>
+                    <td>{{form_widget(form.codedm)}}</td>
+                </tr>
+                <tr><td>{{ form_widget(form.Valider, { 'attr': {'class': 'bttn'} })}}</td>
+                 <td class="bttnL">   
+                 
+  
+        <a href="{{ path('dossiermedical') }}">
+            Back
+        </a>
+   </td></tr>
+             {{ form_rest(form)}}
+            </table>
+        </form>
+{% endblock %}
+
+
